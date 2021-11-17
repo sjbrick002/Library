@@ -1,0 +1,63 @@
+html {
+    font-size: 100%;
+    box-sizing: border-box;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.bookshelf {
+    width: 100vw;
+    height: auto;
+    min-height: 50vh;
+
+    background-color: brown;
+    border: solid 10px darkred;
+
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.book {
+    margin: 0 1em;
+    padding: 1em;
+
+    background-color: black;
+    border: solid 3px gold;
+
+    width: 25%;
+    min-height: 50vh;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.book-info {
+    margin: 1em;
+
+    color: goldenrod;
+
+    text-align: center;
+}
+
+.book-status {
+    background-color: goldenrod;
+    color: black;
+}
+
+.remove-btn {
+    color: grey;
+    text-decoration: underline;
+}
+
+.remove-btn:hover {
+    color: white;
+}
