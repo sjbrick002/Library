@@ -1,13 +1,16 @@
 let library = []
 
-function book(title, author, pages, read) {
-    this.title = title
-    this.author = author
-    this.pages = pages
-    this.read = read
+class Book {
+  constructor(title, author, pages, read) {
+      this.title = title
+      this.author = author
+      this.pages = pages
+      this.read = read
+  }
+  info() {
+      return `${this.title} by ${this.author}, ${this.pages} pages, ${this.read ? "completed reading" : "not read yet"}`
+  }
 }
-
-book.prototype.info = function() {return `${this.title} by ${this.author}, ${this.pages} pages, ${this.read ? "completed reading" : "not read yet"}`}
 
 const addBtn = document.querySelector(".add-btn")
 addBtn.addEventListener("click", addLibraryBook)
@@ -17,7 +20,7 @@ function addLibraryBook() {
     let pages = prompt("What is the book's page count?")
     let read = prompt("Have you read this book yet?", "y/n")
     read = (read === "y") ? true : false
-    let novel = new book(title, author, pages, read)
+    let novel = new Book(title, author, pages, read)
     library.push(novel)
     console.log(library)
     exhibitLibrary()
